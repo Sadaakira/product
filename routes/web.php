@@ -12,6 +12,14 @@
 */
 
 
+Route::get('/welcome', function(){
+    return view('welcome');
+});
+
 Route::get('/', 'BooksController@index');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
