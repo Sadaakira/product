@@ -16,10 +16,12 @@ Route::get('/welcome', function(){
     return view('welcome');
 });
 
-Route::get('/', 'BooksController@index');
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::group(['middleware' => ['auth']], function () {
+    //Route::get('/', 'BooksController@index');
+//});
+
+Route::get('/', 'BooksController@index')->middleware('auth');
