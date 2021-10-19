@@ -21,7 +21,6 @@ class CreateWordsTable extends Migration
             $table->foreign('language_id')->references('id')->on('languages');
             $table->unsignedBigInteger('book_id')->nullable();
             $table->foreign('book_id')->references('id')->on('books');
-            $table->integer('page');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
