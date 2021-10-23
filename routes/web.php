@@ -20,8 +20,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::group(['middleware' => ['auth']], function () {
-    //Route::get('/', 'BooksController@index');
-//});
+//ログインしないと見られないページ
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'BooksController@index');
+    Route::get('/create', 'BooksController@create');
+    Route::get('/books/{book}/words', 'BooksController@book');
+});
 
-Route::get('/', 'BooksController@index')->middleware('auth');
+//Route::get('/', 'BooksController@index')->middleware('auth');
+
