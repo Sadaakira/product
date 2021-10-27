@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'BooksController@index');
     Route::get('/create', 'BooksController@create');
     Route::get('/books/{book}/words', 'BooksController@book');
+    Route::get('/books/{book}/words/add', 'BooksController@add');
+    Route::post('/', 'BooksController@store');
 });
 
 //Route::get('/', 'BooksController@index')->middleware('auth');

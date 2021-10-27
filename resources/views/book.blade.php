@@ -15,7 +15,7 @@
     <body>
         <h1>詳細</h1>
         <div class='menu'>
-            <h3>[<a href='/words/create'>新規作成</a>]</h3>
+            <h3>[<a href='/books/{book}/words/add'>追加</a>]</h3>
             <h3>編集</h3>
             <h3>削除</h3>
             <h3>学習モード</h3>
@@ -31,5 +31,6 @@
             </div>
             @endforeach
         </div>
+        <div class='back'>[<a href='/'>戻る</a>]</div>
     </body>
 </html>

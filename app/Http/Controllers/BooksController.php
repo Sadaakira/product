@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\BookRequest;
 use App\Book;
 use App\Word;
 use App\Language;
@@ -20,9 +20,22 @@ class BooksController extends Controller
         return view('create');
     }
     
+    public function add()
+    {
+        return view('add');
+    }
+    
     public function book(Word $word)
     {
         return view('book')->with(['words' => $word->get()]);
+    }
+    
+    public function store(Request $request, Book $book)
+    {
+        dd($request->all());
+        //$input = $request['books'];
+        //$book->fill($input)->save();
+        //return redirect('/books/' . $book->id);
     }
     
 }

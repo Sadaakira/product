@@ -13,4 +13,11 @@ class Book extends Model
     {
         return $this->hasMany('App\Word');
     }
+    
+    protected $fillable = [
+        'title',
+        'author',
+        ];
+    
+    
 }

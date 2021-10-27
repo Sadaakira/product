@@ -16,9 +16,7 @@
         <h1>登録一覧</h1>
         <div class='menu'>
             <h3>[<a href='/create'>新規作成</a>]</h3>
-            <h3>編集</h3>
-            <h3>削除</h3>
-        </div>
+            </div>
         <div class='books'>
             @foreach ($books as $book)
             <div class='book'>
