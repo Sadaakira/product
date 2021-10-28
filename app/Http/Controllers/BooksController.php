@@ -30,12 +30,32 @@ class BooksController extends Controller
         return view('book')->with(['words' => $word->get()]);
     }
     
-    public function store(Request $request, Book $book)
+    public function store(BookRequest $request, Book $book)
     {
-        dd($request->all());
-        //$input = $request['books'];
-        //$book->fill($input)->save();
-        //return redirect('/books/' . $book->id);
+        //dd($request->all());
+        $input = $request['post'];
+        $book->fill($input)->save();
+        return redirect('/books/' . $book->id . '/words');
+        //リダイレクト、idの位置に注意
     }
     
+    //public function edit(Post $post)
+    //{
+    //    return view('edit')->with(['post' => $post]);
+    //}
+    
+    //public function update(PostRequest $request, Post $post)
+
+    //{
+    //    $input = $request['post'];
+     //   $post->fill($input)->save();
+     //   return redirect('/posts/' . $post->id);
+    //}
+    
+    public function destroy(Book $book)
+    {
+        $book->delete();
+        return redirect('/');
+    }
+
 }

@@ -23,11 +23,17 @@
                 <h3>翻訳</h3>
                 <input type="text" name="post[translation]" placeholder="翻訳" value="{{ old('post.translation') }}"/>
                 //<p class="author__error" style="color:red">{{ $errors->first('post.author') }}</p>
-                <h3>言語</h3>
-                <input type="text" name="post[language]" placeholder="言語" value="{{ old('post.language') }}"/>
+                <div class='language'>
+                    <h3>言語</h3>
+                    <select class="language" id="sel02" name="sel02[]">
+                        <option value="ja" selected>英語</option>
+                        <option value="kr">韓国語</option>
+                        <option value="zh">中国語</option>
+                     </select>
+                </div>
             </div>
             <input type="submit" value="登録">
-            <div class='戻る'>[<a href='/'>back</a>]</div>
+            <div class='back'>[<a href='/'>戻る</a>]</div>
         //</form>
 
     </body>
