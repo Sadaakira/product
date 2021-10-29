@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BookRequest;
+use App\Http\Requests\WordRequest;
 use App\Book;
 use App\Word;
 use App\Language;
@@ -20,14 +21,27 @@ class BooksController extends Controller
         return view('create');
     }
     
-    public function add()
+    public function bookedit(Book $book, Word $word)
     {
-        return view('add');
+        return view('bookedit')->with(['book' => $book, 'word' => $word]);
     }
     
-    public function book(Word $word)
+    public function bookupdate(BookRequest $request, Book $book)
     {
-        return view('book')->with(['words' => $word->get()]);
+        $input = $request['post'];
+        $book->fill($input)->save();
+        return redirect('/books/' . $book->id . '/words');
+       
+    }
+    
+    public function add(Book $book)
+    {
+        return view('add')->with(['book' => $book]);
+    }
+    
+    public function book(Book $book, Word $word)
+    {
+        return view('book')->with(['book' => $book, 'word'=>$word, 'words' => $word->get()]);
     }
     
     public function store(BookRequest $request, Book $book)
@@ -39,23 +53,32 @@ class BooksController extends Controller
         //リダイレクト、idの位置に注意
     }
     
-    //public function edit(Post $post)
-    //{
-    //    return view('edit')->with(['post' => $post]);
-    //}
-    
-    //public function update(PostRequest $request, Post $post)
-
-    //{
-    //    $input = $request['post'];
-     //   $post->fill($input)->save();
-     //   return redirect('/posts/' . $post->id);
-    //}
-    
-    public function destroy(Book $book)
+    public function word(Book $book, Word $word)
     {
-        $book->delete();
-        return redirect('/');
+        return view('word')->with(['book' => $book, 'word' => $word]);
     }
+    
+    public function record(WordRequest $request, Word $word)
+    {
+        // dd($request->all());
+        $input = $request['post'];
+        $word->fill($input)->save();
+        return redirect('/books/' . $word->id . '/words');
+       
+    }
+    
+    public function wordedit(Book $book, Word $word)
+    {
+        return view('wordedit')->with(['book' => $book, 'word' => $word]);
+    }
+    
+    public function wordupdate(WordRequest $request,Book $book, Word $word)
+    {
+        $input = $request['post'];
+        $word->fill($input)->save();
+        return redirect('/books/' . $book->id . '/words/' . $word->id);
+       
+    }
+    
 
 }

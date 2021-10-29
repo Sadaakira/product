@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Add</title>
+        <title>WordEdit</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -13,16 +13,15 @@
         
     </head>
     <body>
-        <h1>追加</h1>
-        <form action="/books/{{ $book->id }}/words" method="POST">
+        <h1>編集</h1>
+        <form action="/books/{{ $book->id }}/words/{{ $word->id }}" method="POST">
             {{ csrf_field() }}
-            <div class='add'>
+            @method('PUT')
+            <div class='edit'>
                 <h3>原文</h3>
-                <input type="text" name="post[content]" placeholder="原文" value="{{ old('post.content') }}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.content') }}</p>
+                <input type="text" name="post[content]" placeholder="原文" value="{{ $word->content }}"/>
                 <h3>翻訳</h3>
-                <input type="text" name="post[Japanese]" placeholder="翻訳" value="{{ old('post.Japanese') }}"/>
-                <p class="author__error" style="color:red">{{ $errors->first('post.Japanese') }}</p>
+                <input type="text" name="post[Japanese]" placeholder="翻訳" value="{{ $word->Japanese }}"/>
                 <div class='language'>
                     <h3>言語</h3>
                     <!--<select class="language" name="post[language]">-->
@@ -32,8 +31,8 @@
                     <!--</select>-->
                 </div>
             </div>
-            <input type="submit" value="登録">
-            <div class='back'>[<a href='/books/{{ $book->id }}/words'>戻る</a>]</div>
+            <input type="submit" value="update">
+            <div class='back'>[<a href='/books/{{ $book->id }}/words/{{ $word->id }}'>戻る</a>]</div>
         </form>
 
     </body>

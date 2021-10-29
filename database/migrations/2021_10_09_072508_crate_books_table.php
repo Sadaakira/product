@@ -28,6 +28,8 @@ class CrateBooksTable extends Migration
      */
     public function down()
     {
+        
         //
+        
     }
 }

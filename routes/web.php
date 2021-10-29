@@ -26,9 +26,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/create', 'BooksController@create');
     Route::post('/', 'BooksController@store');
     Route::get('/books/{book}/words', 'BooksController@book');
+    Route::get('/books/{book}/words/edit', 'BooksController@bookedit');
+    Route::put('/books/{book}/words', 'BooksController@bookupdate');
     Route::get('/books/{book}/words/add', 'BooksController@add');
-    Route::delete('/books/{book}/words', 'BooksController@destroy');
-    
+    Route::post('/books/{book}/words', 'BooksController@record');
+    Route::get('/books/{book}/words/{word}', 'BooksController@word');
+    Route::get('/books/{book}/words/{word}/edit', 'BooksController@wordedit');
+    Route::put('/books/{book}/words/{word}', 'BooksController@wordupdate');
 });
 
 //Route::get('/', 'BooksController@index')->middleware('auth');

@@ -24,4 +24,10 @@ class Word extends Model
         return $this->belongsTo('App\User');
     }
    
+   protected $fillable = [
+        'content',
+        'Japanese',
+        'language',
+        ];
+   
 }
