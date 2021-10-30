@@ -18,9 +18,13 @@
         <div class='menu'>
              
             <h3 class='add'>[<a href='/books/{{ $book->id }}/words/add'>追加</a>]</h3>
-            <h3 class='edit'>[<a href='/books/{{ $book->id }}/words/{{ $word->id }}/edit'>編集</a>]</h3>
-            <h3 class='delete'>削除</h3>
-            
+            <h3 class='edit'>[<a href='/books/{{ $book->id }}/words/edit'>編集</a>]</h3>
+            <!--<form action='/books/{{ $book->id }}/words' id='form_delete' method='post'>-->
+            <!--    {{ csrf_field() }}-->
+            <!--    {{ method_field('delete') }}-->
+            <!--    <input type='submit' style='display:none'>-->
+            <!--    <h3 class='delete'>[<span onclick='return deletePost(this);'>削除</span>]</h3>-->
+            <!--</form>-->
             <h3>学習モード</h3>
         </div>
         <div class='words'>
@@ -35,6 +39,13 @@
             @endforeach
         </div>
         <div class='back'>[<a href='/'>戻る</a>]</div>
-        
+        <script>
+            function deletePost(e) {
+                'use strict';
+                if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                    document.getElementById('form_delete').submit();
+                }
+            }
+        </script>
     </body>
 </html>

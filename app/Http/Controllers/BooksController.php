@@ -34,6 +34,12 @@ class BooksController extends Controller
        
     }
     
+    // public function bookdestroy(Book $book)
+    // {
+    //     $book->delete();
+    //     return redirect('/');
+    // }
+    
     public function add(Book $book)
     {
         return view('add')->with(['book' => $book]);
@@ -52,6 +58,7 @@ class BooksController extends Controller
         return redirect('/books/' . $book->id . '/words');
         //リダイレクト、idの位置に注意
     }
+    
     
     public function word(Book $book, Word $word)
     {
@@ -80,5 +87,13 @@ class BooksController extends Controller
        
     }
     
+    
+    // public function worddestroy(Book $book, Word $word)
+    // {
+    //     $book->delete();
+    //     return redirect('/books/' . $book->id . '/words/');
+    // }
+    // 変数2つ？
+
 
 }
