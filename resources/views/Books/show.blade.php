@@ -17,7 +17,7 @@
         <p>{{ $book->author }}</p>
         <div class='menu'>
              
-            <h3 class='add'>[<a href='/books/{{ $book->id }}/words/add'>追加</a>]</h3>
+            <h3 class='add'>[<a href='/books/{{ $book->id }}/words/create'>追加</a>]</h3>
             <h3 class='edit'>[<a href='/books/{{ $book->id }}/words/edit'>編集</a>]</h3>
             <!--<form action='/books/{{ $book->id }}/words' id='form_delete' method='post'>-->
             <!--    {{ csrf_field() }}-->

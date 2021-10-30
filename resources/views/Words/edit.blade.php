@@ -19,16 +19,16 @@
             @method('PUT')
             <div class='edit'>
                 <h3>原文</h3>
-                <input type="text" name="post[content]" placeholder="原文" value="{{ $word->content }}"/>
+                <input type="text" name="word[content]" placeholder="原文" value="{{ $word->content }}"/>
                 <h3>翻訳</h3>
-                <input type="text" name="post[Japanese]" placeholder="翻訳" value="{{ $word->Japanese }}"/>
+                <input type="text" name="word[Japanese]" placeholder="翻訳" value="{{ $word->Japanese }}"/>
                 <div class='language'>
                     <h3>言語</h3>
-                    <!--<select class="language" name="post[language]">-->
-                    <!--    <option value="1" selected>英語</option>-->
-                    <!--    <option value="2">中国語</option>-->
-                    <!--    <option value="3">韓国語</option>-->
-                    <!--</select>-->
+                    <select class="language" name="word[language_id]">
+                        <option value="1" selected>英語</option>
+                        <option value="2">中国語</option>
+                        <option value="3">韓国語</option>
+                    </select>
                 </div>
             </div>
             <input type="submit" value="update">

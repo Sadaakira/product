@@ -18,11 +18,11 @@
             {{ csrf_field() }}
             <div class='create'>
                 <h3>タイトル</h3>
-                <input type="text" name="post[title]" placeholder="title" value="{{ old('post.title') }}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
+                <input type="text" name="book[title]" placeholder="title" value="{{ old('book.title') }}"/>
+                <p class="title__error" style="color:red">{{ $errors->first('book.title') }}</p>
                 <h3>作者</h3>
-                <input type="text" name="post[author]" placeholder="author" value="{{ old('post.author') }}"/>
-                <p class="author__error" style="color:red">{{ $errors->first('post.author') }}</p>
+                <input type="text" name="book[author]" placeholder="author" value="{{ old('book.author') }}"/>
+                <p class="author__error" style="color:red">{{ $errors->first('book.author') }}</p>
             </div>
             <input type="submit" value="登録">
             <div class='back'>[<a href='/'>戻る</a>]</div>

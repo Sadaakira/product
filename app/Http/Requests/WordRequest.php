@@ -15,8 +15,8 @@ class WordRequest extends FormRequest
     public function rules()
     {
         return [
-            'post.content' => 'required|string|max:100',
-            'post.Japanese' => 'required|string|max:100',
+            'word.content' => 'required|string|max:100',
+            'word.Japanese' => 'required|string|max:100',
         ];
     }
     

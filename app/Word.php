@@ -32,7 +32,9 @@ class Word extends Model
    protected $fillable = [
         'content',
         'Japanese',
-        'language',
+        'language_id',
+        'book_id',
+        'user_id',
         ];
    
 }

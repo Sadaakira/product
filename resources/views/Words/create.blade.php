@@ -18,18 +18,18 @@
             {{ csrf_field() }}
             <div class='add'>
                 <h3>原文</h3>
-                <input type="text" name="post[content]" placeholder="原文" value="{{ old('post.content') }}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.content') }}</p>
+                <input type="text" name="word[content]" placeholder="原文" value="{{ old('word.content') }}"/>
+                <p class="title__error" style="color:red">{{ $errors->first('word.content') }}</p>
                 <h3>翻訳</h3>
-                <input type="text" name="post[Japanese]" placeholder="翻訳" value="{{ old('post.Japanese') }}"/>
-                <p class="author__error" style="color:red">{{ $errors->first('post.Japanese') }}</p>
+                <input type="text" name="word[Japanese]" placeholder="翻訳" value="{{ old('word.Japanese') }}"/>
+                <p class="author__error" style="color:red">{{ $errors->first('word.Japanese') }}</p>
                 <div class='language'>
                     <h3>言語</h3>
-                    <!--<select class="language" name="post[language]">-->
-                    <!--    <option value="1" selected>英語</option>-->
-                    <!--    <option value="2">中国語</option>-->
-                    <!--    <option value="3">韓国語</option>-->
-                    <!--</select>-->
+                    <select class="language" name="word[language_id]">
+                        <option value="1" selected>英語</option>
+                        <option value="2">中国語</option>
+                        <option value="3">韓国語</option>
+                    </select>
                 </div>
             </div>
             <input type="submit" value="登録">
