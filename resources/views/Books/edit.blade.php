@@ -19,9 +19,9 @@
             @method('PUT')
             <div class='edit'>
                 <h3>タイトル</h3>
-                <input type="text" name="post[title]" placeholder="title" value="{{ $book->title }}"/>
+                <input type="text" name="book[title]" placeholder="title" value="{{ $book->title }}"/>
                 <h3>作者</h3>
-                <input type="text" name="post[author]" placeholder="author" value="{{ $book->author }}"/>
+                <input type="text" name="book[author]" placeholder="author" value="{{ $book->author }}"/>
             </div>
             <input type="submit" value="更新">
             <div class='back'>[<a href='/books/{{ $book->id }}/words'>戻る</a>]</div>

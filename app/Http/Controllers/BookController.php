@@ -22,6 +22,16 @@ class BookController extends Controller
         return view('Books.create');
     }
     
+    public function store(BookRequest $request, Book $book)
+    {
+        // dd($book);
+        $input = $request['book'];
+        $book->fill($input)->save();
+        return redirect('/books/' . $book->id . '/words');
+        //リダイレクト、idの位置に注意
+    }
+    
+    
     public function edit(Book $book, Word $word)
     {
         return view('Books.edit')->with(['book' => $book, 'word' => $word]);
@@ -49,14 +59,6 @@ class BookController extends Controller
         return view('Books.show')->with(['book' => $book, 'word'=>$word, 'words' => $book->words]);
     }
     
-    public function store(BookRequest $request, Book $book)
-    {
-        // dd($request->all());
-        $input = $request['book'];
-        $book->fill($input)->save();
-        return redirect('/books/' . $book->id . '/words');
-        //リダイレクト、idの位置に注意
-    }
     
     
     

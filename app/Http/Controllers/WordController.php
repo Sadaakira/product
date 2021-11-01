@@ -22,7 +22,8 @@ class WordController extends Controller
         // dd($request->all());
         $input = $request['word'];
         $word = $book->words()->create($input);
-        return redirect('/books/' . $word->id . '/words');
+        // dd($word);
+        return redirect('/books/' . $book->id . '/words');
        
     }
     
@@ -36,7 +37,7 @@ class WordController extends Controller
         return view('Words.edit')->with(['book' => $book, 'word' => $word]);
     }
     
-    public function update(WordRequest $request,Book $book, Word $word)
+    public function update(WordRequest $request, Book $book, Word $word)
     {
         $input = $request['word'];
         $word->fill($input)->save();
@@ -45,7 +46,7 @@ class WordController extends Controller
     }
     
     
-    // public function worddestroy(Book $book, Word $word)
+    // public function destroy(Book $book, Word $word)
     // {
     //     $book->delete();
     //     return redirect('/books/' . $book->id . '/words/');
