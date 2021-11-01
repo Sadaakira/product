@@ -22,7 +22,7 @@
             <div class='book'>
                 <a href='/books/{{ $book->id }}/words'><h2 class='title'>{{ $book->title }}</h2></a>
                 <p class='author'>{{ $book->author }}</p>
-               {{ $book->words }}
+               <!--{{ $book->words }}-->
             </div>
             @endforeach
         </div>

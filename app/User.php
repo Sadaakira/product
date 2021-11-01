@@ -40,12 +40,12 @@ class User extends Authenticatable
     
 }
 
-//class User extends Model
-//{
+// class User extends Model
+// {
     
-//    public function words()
-//    {
-//        return $this->hasMany('App\Word');
-//    }
+//     public function words()
+//     {
+//         return $this->hasMany('App\Word');
+//     }
     
-//}
+// }

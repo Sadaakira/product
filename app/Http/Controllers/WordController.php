@@ -19,10 +19,10 @@ class WordController extends Controller
     
     public function store(WordRequest $request, Book $book, Word $word)
     {
-        // dd($request->all());
         $input = $request['word'];
+        $input += ['user_id' => $request->user()->id];
+        // dd($input);
         $word = $book->words()->create($input);
-        // dd($word);
         return redirect('/books/' . $book->id . '/words');
        
     }

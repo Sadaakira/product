@@ -32,9 +32,9 @@
             <div class='book'>
                 <p class='original'><a href='/books/{{ $book->id }}/words/{{ $word->id }}'>{{ $word->content }}</a></p>
                 <p class='japanese'>{{ $word->Japanese }}</p>
-               {{ $word->language }}
-               {{ $word->book }}
-               <!--{{ $word->user }}//表示できない-->
+               <!--{{ $word->language }}-->
+               <!--{{ $word->book }}-->
+               <!--{{ $word->user }}-->
             </div>
             @endforeach
         </div>

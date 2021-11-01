@@ -30,9 +30,9 @@
             <p class='original'>{{ $word->content }}</p>
             <h4>翻訳</h4>
             <p class='japanese'>{{ $word->Japanese }}</p>
-            {{ $word->language }}
-            {{ $word->book }}
-            <!--{{ $word->user }}//表示できない-->
+            <!--{{ $word->language }}-->
+            <!--{{ $word->book }}-->
+            <!--{{ $word->user }}-->
         </div>
         <div class='back'>[<a href='/books/{{ $book->id }}/words'>戻る</a>]</div>
         <script>
